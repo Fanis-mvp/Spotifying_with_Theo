@@ -3,6 +3,7 @@ import styles from "./App.module.css";
 import SearchResults from "../SearchResults/SearchResults";
 import Playlist from "../Playlist/Playlist";
 import SearchBar from "../SearchBar/SearchBar";
+import Spotify from "../../util/Spotify";
 
 function App() {
   const [searchResults, setSearchResults] = useState([
@@ -20,7 +21,7 @@ function App() {
     },
   ]);
 
-  const [playlistName, setPlaylistName] = useState("PlaylistYeah");
+  const [playlistName, setPlaylistName] = useState("Name Your Playlist");
   const [playlistTracks, setPlaylistTracks] = useState([
     {
       name: "Track example name 1",
@@ -57,9 +58,14 @@ function App() {
 
   const savePlaylist = () => {
     const trackURIs = playlistTracks.map((t) => t.uri);
+    Spotify.savePlaylist(playlistName, trackURIs).then(() => {
+      setPlaylistName("Name Your Playlist");
+      setPlaylistTracks([]);
+    });
   };
 
   const search = (term) => {
+    Spotify.search(term).then((result) => setSearchResults(result));
     console.log(term);
   };
 
