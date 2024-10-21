@@ -6,36 +6,10 @@ import SearchBar from "../SearchBar/SearchBar";
 import Spotify from "../../util/Spotify";
 
 function App() {
-  const [searchResults, setSearchResults] = useState([
-    {
-      name: "Search example name 1",
-      artist: "Search example artist 1",
-      album: "Search example album 1",
-      id: 1,
-    },
-    {
-      name: "Search example name 2",
-      artist: "Search example artist 2",
-      album: "Search example album 2",
-      id: 2,
-    },
-  ]);
+  const [searchResults, setSearchResults] = useState([]);
 
   const [playlistName, setPlaylistName] = useState("Name Your Playlist");
-  const [playlistTracks, setPlaylistTracks] = useState([
-    {
-      name: "Track example name 1",
-      artist: "Track example artist 1",
-      album: "Track example album 1",
-      id: 3,
-    },
-    {
-      name: "Track example name 2",
-      artist: "Track example artist 2",
-      album: "Track example album 2",
-      id: 4,
-    },
-  ]);
+  const [playlistTracks, setPlaylistTracks] = useState([]);
 
   const addTrack = (track) => {
     const existingTrack = playlistTracks.find((t) => t.id === track.id);
@@ -52,7 +26,7 @@ function App() {
     setPlaylistTracks(existingTrack);
   };
 
-  const updatePlayilistName = (name) => {
+  const updatePlaylistName = (name) => {
     setPlaylistName(name);
   };
 
@@ -72,7 +46,7 @@ function App() {
   return (
     <div>
       <h1>
-        Ja<span className={styles.highlight}>mmm</span>ing
+        Spotifying <span className={styles.highlight}>with</span> Theo
       </h1>
       <div className={styles.App}>
         {/* <!-- Add a SearchBar component --> */}
@@ -85,7 +59,7 @@ function App() {
             playlistName={playlistName}
             playlistTracks={playlistTracks}
             onRemove={removeTrack}
-            onNameChange={updatePlayilistName}
+            onNameChange={updatePlaylistName}
             onSave={savePlaylist}
           />
         </div>

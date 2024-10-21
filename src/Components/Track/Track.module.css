@@ -6,19 +6,44 @@
 
 .Track-action {
     cursor: pointer;
-    padding: .5rem;
     font-size: 1.05rem;
     transition: color .25s;
-    border: 0px;
+    border: solid #fff 1px;
     background-color: rgba(0, 0, 0, 0);
     color: #fff;
+    height: 1.5rem;
+    width: 1.5rem;
 }
 
 .Track-action:hover {
-    color: rgba(265, 265, 265, .5);
+    transform: scale(1.3);
+    border: solid #1ED760 1px;
+    color: #1ED760;
+    transition: all ease 0.2s;
+}
+
+.PlayStopButton {
+    cursor: pointer;
+    font-size: 1rem;
+    transition: color .25s;
+    border: solid #fff 0.16rem;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    padding: 0.5rem;
+    text-align: center;
+    text-justify: auto;
+    margin-right: 0.6rem;
+}
+
+.PlayStopButton:hover {
+    transform: scale(1.1);
+    color: #1ED760;
+    transition: all ease 0.2s;
 }
 
 .Track-information {
+    
     flex-grow: 1;
     display: flex;
     flex-direction: column;
