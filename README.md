@@ -17,7 +17,6 @@ With **Spotifying with Theo**, you can search for songs on Spotify, add songs to
 - **JavaScript**: Core logic and app functionality.
 
 ## Installation Instructions
-To be updated.
-
+Visit https://spotifying-with-theo.netlify.app and connect to your spotify account.
 ## Contact
 For any questions or issues, reach out to me at **fanis.mvp@gmail.com**.
